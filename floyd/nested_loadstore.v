@@ -454,6 +454,8 @@ Proof.
       apply JMeq_refl.
 Qed.
 
+Instance rewrelty : RelationClasses.RewriteRelation (@eq Type) := {}.
+
 Lemma nested_field_ramif_load: forall sh t gfs0 gfs1 (v_reptype: reptype (nested_field_type t gfs0)) (v_val: val) p,
   field_compatible t (gfs1 ++ gfs0) p ->
   JMeq (proj_reptype (nested_field_type t gfs0) gfs1 v_reptype) v_val ->
